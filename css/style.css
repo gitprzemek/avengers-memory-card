@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: "AVENGEANCE HEROIC AVENGER BI";
+    src: url(../fonts/AVENGEANCE\ HEROIC\ AVENGER\ BI.otf);
+}
+@font-face{
+    font-family: "GALACTIC VANGUARDIAN NCV";
+    src: url(../fonts/GALACTIC\ VANGUARDIAN\ NCV.ttf);
+}
+body{
+    min-height: 100vh;
+    margin: 0 auto;
+    background-image: url(../images/avengers/thanos-bg2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.title{
+    margin: 0 auto 20px 5%;
+    top: 20px;
+    position: relative;
+    max-width: 900px;
+    max-height: 23vh;
+    color: white;
+    font-family: "AVENGEANCE HEROIC AVENGER BI";
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(153,67,17,1) 0%, rgba(153,67,17,1) 1%, rgba(219,188,76,1) 68%, rgba(248,211,70,1) 99%, rgb(248, 230, 70) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.title h1, .title p, hr{
+    width: 900px;
+    margin: 0 auto;
+}
+.title h1{
+    font-size: 6em;
+    height: 120px;
+    -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: rgba(248,211,70);
+}
+.title hr{
+    background-color: rgba(248,211,70); height: 1px; border: 0; 
+}
+.title p{
+    height: 35px;
+    font-size: 25px;
+    line-height: 30px;
+    padding: 5px;
+    font-family: "GALACTIC\ VANGUARDIAN\ NCV";
+}
+#game{
+    display: flex;
+    align-items: flex-end;
+    /* align-content: flex-end; */
+    max-width: 900px;
+    height: auto;
+    margin: auto auto 0 5%;
+    padding: 20px 0;
+    bottom: 0;
+}
+
+.grid {
+    bottom: 0;
+    max-width: 900px;
+    max-height: 100%;
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.card{
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+    margin: 5px;
+}
+.card, .back, .front{
+    height: 130px;
+    width: 130px;
+    border: 0px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 12px 0px #4b0175;
+transition: all .4s linear;
+}
+.card:hover, .back:hover, .front:hover{
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 12px 0px rgba(255, 169, 8, 0.938);
+}
+.back, .front {
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front{
+    background-image: url(../images/avengers/logoblue1.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}
+.back{
+    transform: rotateY(180deg);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.selected {
+    transform: rotateY(180deg);
+    background: transparent !important;
+}
+.match .front, .match .back, .card.match {
+    background: rgb(1, 1, 1, 1) url(../images/avengers/logoblue1.png) no-repeat center cover;
+    opacity: 0.5;
+    -webkit-box-shadow: none !important;
+-moz-box-shadow: none !important;
+box-shadow: none !important;
+}
+
+/* YOU WIN WINDOW */
+
+ .overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+	margin: 70px auto;
+	padding: 20px;
+	background: black url(../images/avengers/thanos-bg.jpg) no-repeat top center;
+    background-size: cover;
+    width: 80%;
+    height: 80%;
+	position: relative;
+	transition: all 1s ease-in-out;
+    font-family: "GALACTIC VANGUARDIAN NCV";
+    text-align: center;
+}
+
+.popup .content-1{
+    height: 1em;
+    width: 100%;
+    font-size: 4em;
+    text-shadow: 0px 0px 8px rgb(255, 213, 28);
+    color: #ffffe3;
+}
+.popup .content-2{
+    background: black url(../images/avengers/ironmanagain.jpg) no-repeat right top;
+    background-size: cover;
+}
+.popup .content-2, .popup .content-3{
+    flex: 0 1 50%;
+	padding: 1em;
+	display: block;
+    margin: 0 auto;
+    height: 60%;
+    max-width: 300px;
+    
+}
+.popup .content-3{
+    padding: 0;
+}
+.popup .content-3 button{
+    height: 100%;
+    width: 100%;
+    background: black url(../images/avengers/Octocat.png) no-repeat center;
+    background-size: contain;
+}
+.popup .content-3 button, .popup .content-2{
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-shadow: 0px 0px 8px rgb(0, 0, 0);
+    border: none;
+    -webkit-box-shadow: 0px 1px 10px 1px rgba(0,0,0,0.68);
+-moz-box-shadow: 0px 1px 10px 1px rgba(0,0,0,0.68);
+box-shadow: 0px 1px 10px 1px rgba(0,0,0,0.68);
+}
+.popup .content-3 button:hover, .popup .content-2:hover{
+    -webkit-box-shadow: 0px 1px 10px 1px rgba(0,0,0,0.68);
+-moz-box-shadow: 0px 1px 10px 1px rgba(0,0,0,0.68);
+box-shadow: 0px 1px 10px 1px rgb(8, 185, 255, 0.68);
+}
+.show {
+	visibility: visible !important;
+	opacity: 100 !important;
+}
+
