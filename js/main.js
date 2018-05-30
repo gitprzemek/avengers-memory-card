@@ -58,7 +58,7 @@ let secondGuess = "";
 let previousTarget = null;
 let delay = 1200;
 let matchedCard = document.getElementsByClassName("match");
-let modal = document.getElementById("popup1");
+let modal = document.getElementById("win-window");
 console.log(modal);
 
 // ADD CLASS WHEN MATCH
