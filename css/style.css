@@ -30,9 +30,9 @@ body{
     color: white;
     font-family: "AVENGEANCE HEROIC AVENGER BI";
     text-align: center;
-    background: linear-gradient(to bottom, rgba(153,67,17,1) 0%, rgba(153,67,17,1) 1%, rgba(219,188,76,1) 68%, rgba(248,211,70,1) 99%, rgb(248, 230, 70) 100%);
+    /* background: linear-gradient(to bottom, rgba(153,67,17,1) 0%, rgba(153,67,17,1) 1%, rgba(219,188,76,1) 68%, rgba(248,211,70,1) 99%, rgb(248, 230, 70) 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
 }
 .title h1, .title p, hr{
     width: 900px;
@@ -42,7 +42,11 @@ body{
     font-size: 6em;
     height: 120px;
     -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: rgba(248,211,70);
+   -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(248,211,70);
+    background: linear-gradient(to bottom, rgba(153,67,17,1) 0%, rgba(153,67,17,1) 1%, rgba(219,188,76,1) 68%, rgba(248,211,70,1) 99%, rgb(248, 230, 70) 100%);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .title hr{
     background-color: rgba(248,211,70); height: 1px; border: 0; 
@@ -53,6 +57,7 @@ body{
     line-height: 30px;
     padding: 5px;
     font-family: "GALACTIC\ VANGUARDIAN\ NCV";
+    color: rgba(248,211,70);
 }
 #game{
     display: flex;
